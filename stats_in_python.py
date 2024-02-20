@@ -58,13 +58,13 @@ def main():
                 try:
                     num = float(line.split("\t")[column_to_parse])
                     numbers.append(num)
-                except (IndexError, ValueError) as e:
+                except (IndexError, ValueError) as error:
                     # Handle cases where the numeric value cannot be extracted
-                    if isinstance(e, IndexError):
+                    if isinstance(error, IndexError):
                         print(f"Exiting: There is no valid 'list index' in column {column_to_parse} "
                               f"in line {line_number} in file: {input_file}")
-                    elif isinstance(e, ValueError):
-                        print(f"Skipping line number {line_number} : {e}")
+                    elif isinstance(error, ValueError):
+                        print(f"Skipping line number {line_number} : {error}")
                     continue
 
     except FileNotFoundError:
