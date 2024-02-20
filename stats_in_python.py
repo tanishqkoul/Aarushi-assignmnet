@@ -1,25 +1,19 @@
 import sys
 import math
-from collections import Counter
 
 def calculate_statistics(numbers):
-
-    # Calculate a descriptive statistics for a list of numbers.
-    # Args:
-    #  numbers (list): List of numeric values.
-    # Returns:
-    # - Tuple containing Average, Maximum, Minimum, Variance, Standard Deviation, Median.
-
+    """
+    Calculate descriptive statistics for a list of numbers.
+    
+    Args:
+    - numbers (list): List of numeric values.
+    
+    Returns:
+    - Tuple containing Average, Maximum, Minimum, Variance, Standard Deviation, Median.
+    """
     n = len(numbers)
-    if n == 0: 
+    if n == 0:
         return None, None, None, None, None, None
-    # Why there are 5 None
-    # Average (None): There is no average to calculate if there are no numbers.
-    # Maximum (None): There is no maximum value if there are no numbers.
-    # Minimum (None): There is no minimum value if there are no numbers.
-    # Variance (None): There is no variance to calculate if there are no numbers.
-    # Standard Deviation (None): There is no standard deviation to calculate if there are no numbers.
-    # Median (None): There is no median to calculate if there are no numbers.
 
     # Calculate average
     average = sum(numbers) / n
@@ -43,16 +37,13 @@ def calculate_statistics(numbers):
     return average, max(numbers), min(numbers), variance, std_dev, median
 
 def main():
+    """
+    Main function for running the script.
+    """
     # Check if command-line arguments are provided
     if len(sys.argv) != 3:
         print("Usage: stats_in_python.py <input_file> <column_to_parse>")
         sys.exit(1)
-
-# sys.argv is a Python list that contains the command-line arguments supplied to the script.
-# Len(sys.argv) verifies the length of this list.
-# The condition len(sys.argv)!= 3 determines if there are precisely three command-line arguments (the script name counts as the first parameter).
-
-
 
     # Extract command-line arguments
     input_file = sys.argv[1]
